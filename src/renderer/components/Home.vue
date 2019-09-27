@@ -155,12 +155,7 @@
       }
     },
     async mounted () {
-      for(let i = 0; i<30; ++i) {
-        alert('pause')
-        const res = await printer.pausePrinter()
-        alert(res)
-        alert(JSON.stringify(res, null, 2))
-      }
+      const res = await printer.pausePrinter()
 
       this.jobTimer = setInterval(async () => {
         await this.updateJobs()

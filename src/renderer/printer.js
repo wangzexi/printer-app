@@ -17,7 +17,7 @@ function pausePrinter (printerName) {
   } else {
     cmd = `gwmi win32_printer | ? { $_.Name -eq '${printerName}' } | % { $null = $_.pause() }`
   }
-  alert(cmd)
+  ps.addCommand(cmd)
   return ps.invoke()
 }
 
